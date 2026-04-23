@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sponsorlarımız</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background:#f1f5f9;
+}
+
+/* NAV */
+nav{
+    background:#0f172a;
+    color:white;
+    padding:15px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.logo{
+    font-weight:bold;
+    color:#38bdf8;
+    font-size:18px;
+}
+
+.menu-toggle{
+    font-size:28px;
+    cursor:pointer;
+    display:none;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:10px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    padding:8px 10px;
+    border-radius:6px;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    background:#38bdf8;
+}
+
+/* HEADER */
+.header{
+    text-align:center;
+    padding:40px 20px;
+}
+
+.header h1{
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+/* CONTAINER */
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:20px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:20px;
+}
+
+/* CARD */
+.card{
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    text-align:center;
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+}
+
+.card h3{
+    margin-bottom:8px;
+}
+
+.card p{
+    color:#666;
+    margin-bottom:15px;
+}
+
+/* BUTTONS */
+.btn-group{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:8px;
+}
+
+.btn{
+    padding:8px 12px;
+    border-radius:8px;
+    text-decoration:none;
+    color:white;
+    font-size:13px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    opacity:0.8;
+}
+
+.instagram{ background:#e1306c; }
+.website{ background:#6366f1; }
+.phone{ background:#22c55e; }
+.map{ background:#f97316; }
+
+/* CTA */
+.cta{
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+    margin:30px 20px;
+    border-radius:10px;
+}
+
+.cta a{
+    display:inline-block;
+    margin-top:15px;
+    background:#38bdf8;
+    padding:12px 25px;
+    border-radius:8px;
+    color:white;
+    text-decoration:none;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    background:#0f172a;
+    color:white;
+    padding:20px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+    .menu-toggle{
+        display:block;
+    }
+
+    nav ul{
+        display:none;
+        flex-direction:column;
+        width:100%;
+        margin-top:10px;
+    }
+
+    nav ul.active{
+        display:flex;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">Marmaris Merkez Camileri Derneği</div>
+
+    <div class="menu-toggle" onclick="menu()">☰</div>
+
+    <ul id="menu">
+        <li><a href="index.html">Ana Sayfa</a></li>
+        <li><a href="camiler.html">Camiler</a></li>
+        <li><a href="etkinlikler.html">Etkinlikler</a></li>
+        <li><a href="ezan.html">Ezan Vakitleri</a></li>
+        <li><a href="faydali-dini-linkler.html">Dini Linkler</a></li>
+        <li><a href="faydali-linkler.html">Faydalı Linkler</a></li>
+        <li><a href="hakkimizda.html">Hakkımızda</a></li>
+        <li><a href="iletisim.html">İletişim</a></li>
+        <li><a href="bilgi.html">İlçe Bilgi</a></li>
+        <li><a href="reklam.html">Reklam</a></li>
+        <li><a href="sponsorlar.html">Sponsorlar</a></li>
+    </ul>
+</nav>
+
+<div class="header">
+    <h1>🤝 Sponsorlarımız</h1>
+    <p>Bize destek olan işletmeler</p>
+</div>
+
+<div class="container">
+
+    <div class="card">
+        <h3>Dal Kardeşler</h3>
+        <p>Kebap & Yemek</p>
+
+        <div class="btn-group">
+            <a class="btn instagram" href="https://instagram.com/dalkebap" target="_blank">Instagram</a>
+            <a class="btn website" href="#">Website</a>
+            <a class="btn phone" href="tel:+905551112233">Ara</a>
+            <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Marmaris+Dal+Kardeşler" target="_blank">Harita</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>Mabel Emlak</h3>
+        <p>Marmaris</p>
+
+        <div class="btn-group">
+            <a class="btn website" href="http://mabelmarmaris.com" target="_blank">Website</a>
+            <a class="btn phone" href="tel:+905551112233">Ara</a>
+            <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Mabel+Emlak+Marmaris" target="_blank">Harita</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>PitaLand</h3>
+        <p>Toronto Canada</p>
+
+        <div class="btn-group">
+            <a class="btn instagram" href="https://instagram.com/pitaland.ca" target="_blank">Instagram</a>
+            <a class="btn website" href="https://pitaland.ca" target="_blank">Website</a>
+            <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=PitaLand+Toronto" target="_blank">Harita</a>
+        </div>
+    </div>
+
+</div>
+
+<div class="cta">
+    <h2>Siz de Sponsor Olun</h2>
+    <a href="iletisim.html">İletişim Geçin</a>
+</div>
+
+<footer>
+    © 2026 Marmaris Camileri
+</footer>
+
+<script>
+function menu(){
+    document.getElementById("menu").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>

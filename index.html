@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marmaris Merkez Camileri Derneği</title>
+
+<link rel="manifest" href="manifest.json">
+
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+}
+
+/* NAVBAR */
+nav{
+    background:#1d2331;
+    color:white;
+    padding:15px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.logo{
+    font-size:20px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap: 15px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-size:14px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover{
+    background:#38bdf8;
+    transform: translateY(-2px);
+}
+
+/* HERO */
+.hero{
+    height:80vh;
+    background:url("resim1.png") no-repeat center/cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    text-align:center;
+    position:relative;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.4);
+}
+
+.hero > div{
+    position:relative;
+    z-index: 1;
+}
+
+.hero h1{
+    font-size:48px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    margin-bottom: 20px;
+}
+
+.hero p{
+    margin-top:10px;
+    font-size:20px;
+}
+
+.btn{
+    display: inline-block;
+    margin-top:25px;
+    padding:15px 35px;
+    background:#38bdf8;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4);
+}
+
+.btn:hover{
+    background:#0ea5e9;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(56, 189, 248, 0.6);
+}
+
+/* SECTIONS */
+.section{
+    padding:60px 20px;
+    text-align:center;
+}
+
+.section h2{
+    font-size: 36px;
+    color: #db5014;
+    margin-bottom: 40px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+    gap:30px;
+    margin-top:30px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card-link{
+    text-decoration: none;
+    color: inherit;
+}
+
+.card{
+    background:white;
+    padding:30px 25px;
+    border-radius:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.card:hover{
+    transform: translateY(-8px);
+    box-shadow:0 8px 25px rgba(56, 189, 248, 0.3);
+    border: 2px solid #38bdf8;
+}
+
+.card h3{
+    margin-bottom: 15px;
+    color: #1d2331;
+    font-size: 22px;
+}
+
+.card p{
+    color: #666;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* MAP */
+.map-container{
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+iframe{
+    border:0;
+    border-radius:12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* FOOTER */
+footer{
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:50px;
+    font-size: 14px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    nav{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 15px 20px;
+    }
+
+    nav ul{
+        flex-direction: column;
+        width: 100%;
+        gap: 5px;
+    }
+
+    nav ul li{
+        width: 100%;
+    }
+
+    nav ul li a{
+        display: block;
+        width: 100%;
+    }
+
+    .hero{
+        height: 60vh;
+    }
+
+    .hero h1{
+        font-size: 28px;
+    }
+
+    .hero p{
+        font-size: 16px;
+    }
+
+    .btn{
+        padding:12px 25px;
+        font-size:14px;
+    }
+
+    .section h2{
+        font-size: 28px;
+    }
+
+    .cards{
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+.menu-toggle{
+    font-size:28px;
+    cursor:pointer;
+    display:none;
+    color:white;
+}
+
+@media(max-width:768px){
+
+    .menu-toggle{
+        display:block;
+    }
+
+    nav ul{
+        display:none;
+        flex-direction:column;
+        width:100%;
+        margin-top:10px;
+    }
+
+    nav ul.active{
+        display:flex;
+    }
+}
+.live-tv{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    width:300px;
+    height:170px;
+    z-index:9999;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,0.3);
+    background:black;
+}
+
+.live-tv iframe{
+    width:100%;
+    height:100%;
+}
+
+.live-tv button{
+    position:absolute;
+    top:5px;
+    right:5px;
+    background:red;
+    color:white;
+    border:none;
+    padding:5px 8px;
+    cursor:pointer;
+    z-index:10;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="logo">Marmaris Merkez Camileri Derneği</div>
+
+    <div class="menu-toggle" onclick="menu()">☰</div>
+
+    <ul id="menu">
+        <li><a href="index.html">Ana Sayfa</a></li>
+        <li><a href="camiler.html">Camiler</a></li>
+        <li><a href="etkinlikler.html">Etkinlikler</a></li>
+        <li><a href="ezan.html">Ezan Vakitleri</a></li>
+        <li><a href="faydali-dini-linkler.html">Dini Linkler</a></li>
+        <li><a href="faydali-linkler.html">Faydalı Linkler</a></li>
+        <li><a href="hakkimizda.html">Hakkımızda</a></li>
+        <li><a href="iletisim.html">İletişim</a></li>
+        <li><a href="bilgi.html">İlçe Bilgi</a></li>
+        <li><a href="reklam.html">Reklam</a></li>
+        <li><a href="sponsorlar.html">Sponsorlar</a></li>
+         <li><a href="kabe.canli-izle.html">Kabe.canli-izle</a></li>
+      
+    </ul>
+
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+    <div>
+        <h1>Marmaris Merkez Camileri Derneği</h1>
+
+        <a href="faydali-dini-linkler.html" class="btn">Dini Linklere Git</a>
+        
+        <a href="kabe.canli-izle.html" class="btn">🕋 Canlı İzle</a>
+
+    </div>
+</div>
+<!-- TANITIM -->
+<div class="section">
+    <h2>✨ Neler Var?</h2>
+
+    <div class="cards">
+        
+        <a href="camiler.html" class="card-link">
+            <div class="card">
+                <h3>🕌 Cami Listesi</h3>
+                <p>Marmaris'teki tüm camileri keşfedin</p>
+            </div>
+        </a>
+
+        <a href="etkinlikler.html" class="card-link">
+            <div class="card">
+                <h3>📅 Etkinlikler</h3>
+                <p>Camilerin düzenlediği faaliyetler</p>
+            </div>
+        </a>
+
+        <a href="ezan.html" class="card-link">
+            <div class="card">
+                <h3>🕐 Ezan Vakitleri</h3>
+                <p>Güncel namaz saatleri</p>
+            </div>
+        </a>
+
+        <a href="faydali-dini-linkler.html" class="card-link">
+            <div class="card">
+                <h3>📖 Dini Linkler</h3>
+                <p>Faydalı dini kaynaklar</p>
+            </div>
+        </a>
+        <a href="reklam.html" class="card-link">
+            <div class="card">
+                <h3>Reklam Ver</h3>
+                <p>Faydalı ol</p>
+            </div>
+        </a>
+
+        <a href="faydali-linkler.html" class="card-link">
+            <div class="card">
+                <h3>🔗 Faydalı Linkler</h3>
+                <p>Önemli web siteleri</p>
+            </div>
+        </a>
+
+        <a href="bilgi.html" class="card-link">
+            <div class="card">
+                <h3>🌤️ İlçe Bilgi & Hava</h3>
+                <p>Önemli telefonlar ve hava durumu</p>
+            </div>
+        </a>
+
+        <a href="sponsorlar.html" class="card-link">
+            <div class="card">
+                <h3>🤝 Sponsorlar</h3>
+                <p>Bize destek olan firmalar</p>
+            </div>
+        </a>
+
+        <a href="iletisim.html" class="card-link">
+            <div class="card">
+                <h3>📞 İletişim</h3>
+                <p>Bizimle iletişime geçin</p>
+            </div>
+        </a>
+
+    </div>
+</div>
+
+<!-- HARİTA -->
+<div class="section">
+    <h2>📍 Marmaris Haritası</h2>
+
+    <div class="map-container">
+        <iframe 
+            src="https://www.google.com/maps?q=Marmaris%20Merkez%20Camii&output=embed"
+            width="100%" 
+            height="450">
+        </iframe>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <p><strong>Marmaris Merkez Camileri Derneği</strong></p>
+    <p>📧 info@marmarismerkezcamileri.com | 📱 +90 534 515 73 63</p>
+    <p style="margin-top: 15px; opacity: 0.7;">© 2026 Tüm Hakları Saklıdır</p>
+</footer>
+<!-- 🔴 CANLI YAYIN KUTUSU -->
+<div class="live-tv" id="tv">
+    <button onclick="kapat()">X</button>
+
+    <a href="kabe-canli-izle.html">
+        <img src="https://i.imgur.com/6qK0QhX.jpg">
+    </a>
+</div>
+<script>
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("sw.js")
+        .then(reg => console.log('Service Worker kayıtlı', reg))
+        .catch(err => console.log('Service Worker hatası', err));
+}
+
+</script>
+<script>
+function menu(){
+    document.getElementById("menu").classList.toggle("active");
+}
+
+</script>
+<script>
+function kapat(){
+    document.getElementById("tv").style.display="none";
+}
+</script>
+
+</div>
+</body>
+</html>
